@@ -2,8 +2,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gidole&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <div class="list border-2 border-gray-300 rounded-md p-4 max-w-md mx-auto h-[600px] overflow-y-auto shadow-lg">
-      <div class="grid grid-cols-3 gap-4">
+    <div class="list border-4 border-red-700 rounded-md p-4 max-w-md mx-auto h-[600px] overflow-y-auto shadow-lg">
+      <div class="border-grey-300">
+        <div class="grid grid-cols-3 gap-4">
         <article v-for="(pokemon, index) in pokemons"
         :key="'poke'+index"
         @click="setPokemonUrl(pokemon.url)"
@@ -14,6 +15,7 @@
       </div>
       <div id="scroll-trigger" ref="infinitescrolltrigger" class="py-4">
         <i class="fas fa-spinner fa-spin"></i>
+      </div>
       </div>
     </div>
   </template>
