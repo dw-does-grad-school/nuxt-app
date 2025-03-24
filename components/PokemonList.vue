@@ -2,15 +2,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gidole&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <div class="list border-4 border-red-700 rounded-md p-4 max-w-md mx-auto h-[600px] overflow-y-auto shadow-lg">
+    <div class="list border-4 border-red-700 rounded-3xl p-4 max-w-[350px] h-[650px] mx-auto overflow-y-auto shadow-lg bg-white scrollbar-hide">
       <div class="border-grey-300">
         <div class="grid grid-cols-3 gap-4">
         <article v-for="(pokemon, index) in pokemons"
         :key="'poke'+index"
         @click="setPokemonUrl(pokemon.url)"
         class="flex flex-col items-center justify-center">
-          <img :src="imageUrl + pokemon.id + '.png'" width="96" height="96" alt="" class="border-2 border-gray-300 rounded-md">
-          <h3 class="text-2xl text-center capitalize">{{ pokemon.name }}</h3>
+          <img :src="imageUrl + pokemon.id + '.png'" width="70" height="70" alt="" class="border-2 border-gray-300 rounded-md">
+          <h3 class="text-lg text-center capitalize">{{ pokemon.name }}</h3>
         </article>
       </div>
       <div id="scroll-trigger" ref="infinitescrolltrigger" class="py-4">
@@ -85,5 +85,12 @@
   <style>
     body {
       font-family: 'Gidole', sans-serif;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
     }
   </style>
